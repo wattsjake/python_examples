@@ -15,9 +15,9 @@ ax = plt.gca() #you first need to get the axis handle
 ax.set_aspect(1) #sets the height to width ratio to 1. 
 #Use help(ax.set_aspect) for more options.
 
-points = 50
-mu = -0.2
-sig = .5
+points = 500
+mu = 0
+sig = 0.2
 
 #create the arrays for holding the points
 ptx = np.zeros(points)
@@ -32,6 +32,7 @@ pty = np.zeros(points)
   
 ptx = np.random.uniform(-1,1,size=points)
 pty = np.random.uniform(-1,1,size=points)
+
     
 #create the circle data
 theta = np.linspace(0, 2*np.pi, 1000)
@@ -46,7 +47,7 @@ pts_cir = pts_circle(ptx, pty, r)
 
 
 
-plt.scatter(ptx, pty,10,label='Points in Circle %.0f'%pts_cir)
+plt.scatter(ptx, pty,5,label='Points in Circle %.0f'%pts_cir)
 
 plt.xlim(-1.05, 1.05);
 plt.ylim(-1.05, 1.05);
@@ -55,6 +56,7 @@ plt.legend(loc='upper right')
 #plt.box(False)
 #plt.savefig('random_points.png')
 plt.show()
+
 
 pi = pts_cir*4/points
 
